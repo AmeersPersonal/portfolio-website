@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import NavBar from './components/navBar'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 import "./pages/home.jsx"
@@ -15,6 +15,7 @@ function App() {
     <>
 
     <Router>
+      <NavBar />
       <Routes>
         <Route path="" element={<HomePage />}></Route>
         <Route path="/home" element={<HomePage />}></Route>
