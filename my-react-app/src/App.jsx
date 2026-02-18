@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './App.css'
 import NavBar from './components/navBar'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 import "./pages/home.jsx"
