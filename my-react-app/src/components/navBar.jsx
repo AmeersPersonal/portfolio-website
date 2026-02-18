@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from 'lucide-react';
-// If using routing, import Link: import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // 👈 add this
 import "./navbar.css";
 
 function NavBar() {
@@ -9,14 +9,8 @@ function NavBar() {
     const navItems = [
         { id: "home", label: "Home", path: "/" },
         { id: "experience", label: "Experience", path: "/experience" },
-        // { id: "projects", label: "Projects", path: "/projects" },
-        // { id: "certifications", label: "Certifications", path: "/certifications" },
-        // { id: "work", label: "Work Experience", path: "/work" },
         { id: "forms", label: "Forms", path: "/forms" },
         { id: "contact", label: "Contact", path: "/contact" }
-   
-
-
     ];
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -33,13 +27,12 @@ function NavBar() {
                 {/* Desktop Menu */}
                 <div className="navbar-menu">
                     {navItems.map((item) => (
-                        <a key={item.id} href={item.path} className="nav-item">
+                        <Link key={item.id} to={item.path} className="nav-item"> {/* 👈 Link + to= */}
                             {item.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
-                {/* Hamburger Icon - Now handled by React state */}
                 <div className="hamburger" onClick={toggleMenu}>
                     {menuOpen ? <X size={28} /> : <Menu size={28} />}
                 </div>
@@ -47,14 +40,14 @@ function NavBar() {
                 {/* Mobile Menu */}
                 <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
                     {navItems.map((item) => (
-                        <a 
-                            key={item.id} 
-                            href={item.path} 
+                        <Link
+                            key={item.id}
+                            to={item.path}          // 👈 Link + to=
                             className="mobile-nav-item"
                             onClick={closeMenu}
                         >
                             {item.label}
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>
