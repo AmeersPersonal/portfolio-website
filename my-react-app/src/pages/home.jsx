@@ -5,7 +5,7 @@ import img1 from "../imgs/img1.jpg"
 function HomePage() {
   return (
     <>
-      <NavBar />
+ 
       <div className="home-page-container">
 
         <div className="intro-text">

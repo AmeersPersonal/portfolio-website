@@ -56,7 +56,7 @@ const ExpandableItem = ({ item }) => {
 const ExperiencePage = () => {
   return (
     <>
-    <NavBar/>
+
     <div className="experience-container">
       <ExpandableSection title="Professional Experience" data={experienceData} />
       <ExpandableSection title="Projects" data={projectsData} />

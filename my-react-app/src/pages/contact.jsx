@@ -26,7 +26,7 @@ const ContactPage = () => {
 
   return (
     <>
-    <NavBar />
+
     <div className="contact-container">
       <div className="contact-card">
         <h2 className="contact-title">Contact Us</h2>
