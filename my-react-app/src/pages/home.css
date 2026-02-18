@@ -1,0 +1,37 @@
+.home-page-container
+{
+
+}
+.intro{
+
+}
+.intro-text
+{
+
+}
+.sub-title{
+
+}
+.about-me-text
+{
+    
+}
+.intro-img {
+    display: flex;
+    flex: 1;
+    /* This is the magic line that pushes the image to the edge */
+    justify-content: flex-end; 
+    
+    padding-right: 5%; 
+    margin-left: auto;
+}
+
+.intro-img img {
+    /* Responsive sizing */
+    max-width: 40vw;
+    height: auto;
+    
+   
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
