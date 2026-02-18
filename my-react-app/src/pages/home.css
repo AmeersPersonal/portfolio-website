@@ -1,37 +1,108 @@
-.home-page-container
-{
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.intro{
 
+.sub-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
 }
-.intro-text
-{
 
+.about-me-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
 }
-.sub-title{
 
+/* Image on the left, skills on the right */
+.bottom-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
 }
-.about-me-text
-{
-    
-}
+
 .intro-img {
-    display: flex;
-    flex: 1;
-    /* This is the magic line that pushes the image to the edge */
-    justify-content: flex-end; 
-    
-    padding-right: 5%; 
-    margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .intro-img img {
-    /* Responsive sizing */
-    max-width: 40vw;
-    height: auto;
-    
-   
-    border-radius: 30px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  max-width: 35vw;
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.img-caption {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  max-width: 35vw;
+  margin: 0;
+}
+
+.skill-box {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+}
+
+.skill-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  color: #333;
+}
+
+.skill-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.skill-box ul li {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-weight: 500;
+  border-left: 3px solid #4f8ef7;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.skill-box ul li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+  .skill-box ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

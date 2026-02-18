@@ -1,99 +1,65 @@
-import React, {useState} from "react";
-import {Menu, X} from 'lucide-react';
-import "./navbar.css"
+import React, { useState } from "react";
+import { Menu, X } from 'lucide-react';
+// If using routing, import Link: import { Link } from 'react-router-dom';
+import "./navbar.css";
 
-function NavBar(){
-    const [menuOpen, setMenuopen] = useState(false);
+function NavBar() {
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const navItems = [
-        {id:"home", label:"Home"},
-        {id:"projects", label:"Projects"},
-        {id:"certifcations", label:"Certifcations"},
-        {id:"work", label:"Work Expeerince"},
-        {id:"forms", label:"Forms"},
-        {id:"contact", label:"Contact"}
+        { id: "home", label: "Home", path: "/" },
+        { id: "experience", label: "Experience", path: "/experience" },
+        // { id: "projects", label: "Projects", path: "/projects" },
+        // { id: "certifications", label: "Certifications", path: "/certifications" },
+        // { id: "work", label: "Work Experience", path: "/work" },
+        { id: "forms", label: "Forms", path: "/forms" },
+        { id: "contact", label: "Contact", path: "/contact" }
+   
+
 
     ];
 
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const closeMenu = () => setMenuOpen(false);
+
     return (
-    <>
+        <nav className="navbar">
+            <div className="navbar-container">
+                <div className="navbar-logo">
+                    <div className="logo-icon">AT</div>
+                    <div className="logo-text">Ameer Tayeh</div>
+                </div>
 
-    <nav className="navbar">
-        <div className="navbar-container">
-            <div className="navbar-logo">
-                <div className="logo-icon">P</div>
-                <div className="logo-text"> test</div>
+                {/* Desktop Menu */}
+                <div className="navbar-menu">
+                    {navItems.map((item) => (
+                        <a key={item.id} href={item.path} className="nav-item">
+                            {item.label}
+                        </a>
+                    ))}
+                </div>
 
+                {/* Hamburger Icon - Now handled by React state */}
+                <div className="hamburger" onClick={toggleMenu}>
+                    {menuOpen ? <X size={28} /> : <Menu size={28} />}
+                </div>
+
+                {/* Mobile Menu */}
+                <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+                    {navItems.map((item) => (
+                        <a 
+                            key={item.id} 
+                            href={item.path} 
+                            className="mobile-nav-item"
+                            onClick={closeMenu}
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </div>
             </div>
-            <div className="navbar-menu">
-                <a href="#home" className="nav-item"> Home</a>
-                <a href="#projects" className="nav-item"> Projects</a>
-                <a href="#certifcations" className="nav-item"> Certifications</a>
-                <a href="#work" className="nav-item"> Work Experince</a>
-                <a href="#form" className="nav-item"> Forms</a>
-                <a href="#contact" className="nav-item"> Contact</a>
-
-            </div>
-            
-            <div className="hambuger" id="hambuger">
-                <span className="hambuger-line"></span>
-                <span className="hambuger-line"></span>
-                <span className="hambuger-line"></span>
-            </div>
-
-            <div className="mobile-menu" id="mobileMenu">
-                <a href="#home" className="mobile-nav-item"> Home</a>
-                <a href="#projects" className="mobile-nav-item"> Projects</a>
-                <a href="#certifcations" className="mobile-nav-item"> Certifications</a>
-                <a href="#work" className="mobile-nav-item"> Work Experince</a>
-                <a href="#form" className="mobile-nav-item"> Forms</a>
-                <a href="#contact" className="mobile-nav-item"> Contact</a>
-
-            </div>
-            
-        </div>
-
-    </nav>
-
-    
-    
-    </>)
-
-
-    
+        </nav>
+    );
 }
-
-
-// ===========================
-// NAVBAR FUNCTIONALITY
-// ===========================
-
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-
-  // Toggle mobile menu
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-  });
-
-  // Close mobile menu when a link is clicked
-  mobileNavItems.forEach(item => {
-    item.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    });
-  });
-
-  // Close mobile menu when clicking outside
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.navbar-container')) {
-      hamburger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-    }
-  });
-});
 
 export default NavBar;

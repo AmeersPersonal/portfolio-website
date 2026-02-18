@@ -1,0 +1,132 @@
+/* Experience.css */
+
+
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #e0e0e0;
+}
+
+.experience-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* The Individual Expandable Box */
+.exp-item {
+  background: rgba(255, 255, 255, 0.05); /* Subtle transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.exp-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* The clickable header part */
+.exp-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exp-main-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  color: #61dafb; /* React light blue for titles */
+}
+
+.exp-company {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.exp-meta {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  min-width: 150px;
+}
+
+/* The arrow icon rotation */
+.arrow-icon {
+  margin-left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.open {
+  transform: rotate(180deg);
+}
+
+/* The expandable content area */
+.exp-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  background: rgba(0, 0, 0, 0.2); /* Slightly darker background for content area */
+}
+
+.exp-content.open {
+  /* Set a max-height large enough to fit content, but small enough for smooth transition */
+  max-height: 500px; 
+  padding: 0 20px 20px 20px;
+}
+
+.exp-content ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.exp-content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #d0d0d0;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .exp-meta {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+  .arrow-icon {
+      position: absolute;
+      right: 20px;
+      top: 25px;
+  }
+  .exp-item {
+      position: relative;
+  }
+}
+.section-block {
+  margin-bottom: 60px; /* Spacing between major sections (e.g. Experience vs Projects) */
+}
+
+/* Update section-title to have less bottom margin since the block handles spacing now */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #e0e0e0;
+  border-bottom: 2px solid rgba(255,255,255,0.1); /* Optional: adds a subtle line under headers */
+  padding-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
