@@ -1,8 +1,10 @@
+/* --- Base Styles (Mobile First / General) --- */
+
 .home-page-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 4rem 5%;
+  padding: 2rem 5%; /* Reduced top padding for mobile */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -14,7 +16,7 @@
 }
 
 .sub-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem; /* Slightly smaller for mobile */
   font-weight: 700;
   margin: 0;
 }
@@ -26,11 +28,11 @@
   margin: 0;
 }
 
-/* Image on the left, skills on the right */
+/* Bottom Section: Defaults to Column for Mobile */
 .bottom-section {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column; 
+  align-items: center; /* Center items on mobile */
   gap: 2rem;
 }
 
@@ -39,11 +41,12 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  width: 100%; /* Full width on mobile */
 }
 
 .intro-img img {
-  max-width: 35vw;
   width: 100%;
+  max-width: 400px; /* Prevents image from becoming huge on tablets */
   height: auto;
   border-radius: 30px;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
@@ -55,7 +58,6 @@
   color: #777;
   font-style: italic;
   text-align: center;
-  max-width: 35vw;
   margin: 0;
 }
 
@@ -64,7 +66,8 @@
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  min-width: 180px;
+  width: 100%; /* Ensure it fills container on mobile */
+  box-sizing: border-box;
 }
 
 .skill-box h3 {
@@ -79,7 +82,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
   gap: 0.6rem;
 }
 
@@ -93,16 +96,33 @@
   text-align: center;
   font-weight: 500;
   border-left: 3px solid #4f8ef7;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.skill-box ul li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-}
+/* --- Desktop Adjustments (Screens larger than 768px) --- */
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .home-page-container {
+    padding: 4rem 5%;
+  }
+
+  .sub-title {
+    font-size: 1.75rem;
+  }
+
+  .bottom-section {
+    flex-direction: row; /* Side-by-side for desktop */
+    align-items: flex-start;
+  }
+
+  .intro-img {
+    width: auto;
+  }
+
+  .intro-img img, .img-caption {
+    max-width: 35vw; /* Return to your original sizing for large screens */
+  }
+
   .skill-box ul {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
   }
 }

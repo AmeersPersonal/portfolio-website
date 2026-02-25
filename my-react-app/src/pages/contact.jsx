@@ -29,7 +29,7 @@ const ContactPage = () => {
 
     <div className="contact-container">
       <div className="contact-card">
-        <h2 className="contact-title">Contact Us</h2>
+        <h2 className="contact-title">Contact Me</h2>
         
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">

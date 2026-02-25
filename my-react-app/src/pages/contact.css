@@ -68,3 +68,21 @@
 .submit-button:hover {
   background-color: #1d4ed8;
 }
+/* 1. Global fix for padding/width math */
+* {
+  box-sizing: border-box; 
+}
+
+/* 2. Style for active input fields */
+.form-input:focus, 
+.form-textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+/* 3. Constraint for the message box */
+.form-textarea {
+  resize: vertical; 
+  min-height: 100px;
+}
