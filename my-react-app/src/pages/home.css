@@ -24,7 +24,7 @@
 .about-me-text {
   font-size: 14px;
   line-height: 1.7;
-  color: #555;
+  color: #eef4ff;
   margin: 0;
 }
 
@@ -89,13 +89,39 @@
 .skill-box ul li {
   font-size: 0.85rem;
   color: #555;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem; /* Using consistent padding */
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   text-align: center;
   font-weight: 500;
   border-left: 3px solid #4f8ef7;
+  
+  /* Critical for all devices */
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), 
+              box-shadow 0.2s ease, 
+              background-color 0.2s ease;
+  cursor: pointer;
+  user-select: none; /* Prevents blue highlight box on mobile tap */
+  -webkit-tap-highlight-color: transparent; /* Removes the grey flash on Android/iOS tap */
+}
+
+/* Desktop Hover - Only triggers if the device has a mouse */
+@media (hover: hover) {
+  .skill-box ul li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f8faff;
+    border-left-width: 5px; /* Slight thickening for visual feedback */
+  }
+}
+
+/* Mobile & Desktop Click/Tap - Triggers on the actual press */
+.skill-box ul li:active {
+  transform: scale(0.95) translateY(0); /* "Sinks" into the page when pressed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #eef4ff;
+  transition: transform 0.05s; /* Snappier response for the click */
 }
 
 /* --- Desktop Adjustments (Screens larger than 768px) --- */
