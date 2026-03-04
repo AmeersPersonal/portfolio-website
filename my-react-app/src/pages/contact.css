@@ -9,6 +9,67 @@
   font-family: sans-serif;
 }
 
+/* Container for the LinkedIn Button to center it */
+.media-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* Compact LinkedIn Button */
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;           /* Reduced gap */
+  padding: 6px 16px;  /* Much smaller padding */
+  background: linear-gradient(135deg, #0077b5 0%, #004a73 100%);
+  color: white;
+  text-decoration: none;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 13px;    /* Smaller font size */
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Smaller Icon */
+.linkedin-btn .icon {
+  width: 14px;        /* Shrunk icon size */
+  height: 14px;
+}
+
+/* Adjusted Hover for a smaller button */
+.linkedin-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+/* Subtle Divider between LinkedIn and Form */
+.media-container::after {
+  content: "OR";
+  position: absolute;
+  bottom: -20px;
+  font-size: 10px;
+  color: #9ca3af;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Form Input Enhancements */
+.form-input, .form-textarea {
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+  background-color: #ffffff;
+  border-color: #0077b5;
+  box-shadow: 0 0 0 4px rgba(0, 119, 181, 0.1);
+  outline: none;
+}
 .contact-card {
   width: 100%;
   max-width: 400px;

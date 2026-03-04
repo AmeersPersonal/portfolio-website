@@ -9,7 +9,7 @@ function NavBar() {
     const navItems = [
         { id: "home", label: "Home", path: "/" },
         { id: "experience", label: "Experience", path: "/experience" },
-        { id: "forms", label: "Forms", path: "/forms" },
+        { id: "testimonys", label: "Testimonys", path: "/testimonys" },
         { id: "contact", label: "Contact", path: "/contact" }
     ];
 
@@ -20,9 +20,13 @@ function NavBar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <div className="navbar-logo">
-                    <div className="logo-icon">AT</div>
-                    <div className="logo-text">Ameer Tayeh</div>
+                    <Link to="/" style={{ textDecoration: 'none' }}>
+                <div className="logo-icon">AT</div> </Link>
+    
+                <Link to="/" style={{ textDecoration: 'none' }}>
+                <div className="logo-text">Ameer Tayeh</div> </Link>
                 </div>
+                
 
                 {/* Desktop Menu */}
                 <div className="navbar-menu">

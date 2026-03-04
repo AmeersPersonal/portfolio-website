@@ -1,0 +1,54 @@
+.testimony-card {
+  background: rgba(255, 255, 255, 0.05); /* Very light transparent white */
+  backdrop-filter: blur(12px);           /* The "Glass" effect */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 350px;
+  color: white;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.quote-icon {
+  font-size: 50px;
+  color: #0077b5; /* LinkedIn Blue for accent */
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.testimony-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.user-role {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Glow effect on hover */
+.testimony-card:hover {
+  border-color: rgba(0, 119, 181, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 119, 181, 0.2);
+}
+.testimony-card:hover .card-linkedin-link {
+  color: #0077b5; /* Lights up LinkedIn blue when the card is hovered */
+  transform: scale(1.1);
+}
+
+.card-linkedin-link:hover {
+  filter: drop-shadow(0 0 8px #0077b5);
+}

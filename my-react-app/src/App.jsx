@@ -9,6 +9,7 @@ import "./pages/home.jsx"
 import HomePage from './pages/home.jsx'
 import ExperiencePage from './pages/experience.jsx'
 import ContactPage from './pages/contact.jsx'
+import TestimonyPage from './pages/testimonys.jsx'
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/home" element={<HomePage />}></Route>
         <Route path='/experience' element={<ExperiencePage />}></Route>
         <Route path='/contact' element={<ContactPage />}></Route>
+        <Route path='/testimonys' element={<TestimonyPage />}></Route>
         
       </Routes>
     </Router>

@@ -68,7 +68,7 @@ export const certificationsData = [
     id: "c1",
     title: "GIAC Foundational Cybersecurity Technologies (GFACT)",
     issuer: "GIAC",
-    date: "Completed", // Date not specified in source, marked as completed based on certification list
+    date: "Completed", 
     description: ["Certification of foundational cybersecurity knowledge and skills."]
   },
   {
