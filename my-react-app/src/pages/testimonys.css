@@ -1,52 +1,90 @@
+/* 1. Main Section - Full Width scaling */
 .testimony-section {
-  padding: 80px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 5vh 5vw; /* Fluid padding based on viewport */
+  box-sizing: border-box;
+  color: white;
 }
 
+/* 2. Fluid Grid - Always fills the screen ratio */
 .testimony-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
+  /* Uses a scaling min-width for columns */
+  grid-template-columns: repeat(auto-fit, minmax(22vw, 1fr));
+  gap: 2vw; 
+  margin-top: 4vh;
 }
 
+/* 3. The Fluid Card */
 .testimony-card {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 30px;
-  border-radius: 24px;
+  padding: 2.5vw; /* Padding scales with screen width */
+  border-radius: 1.5vw;
   position: relative;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .testimony-card:hover {
   border-color: #0077b5;
+  transform: translateY(-0.5vh);
+  background: rgba(255, 255, 255, 0.05);
 }
 
+/* 4. LinkedIn Icon in the corner */
 .linkedin-corner-link {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.2vw;
+  right: 1.2vw;
   color: #0077b5;
-  font-size: 1.2rem;
+  font-size: 1.3vw; /* Scales icon size */
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .linkedin-corner-link:hover { opacity: 1; }
 
+/* 5. Author Section Scaling */
 .author-img {
-  width: 50px;
-  height: 50px;
+  width: 3.5vw; /* Image grows with screen size */
+  height: 3.5vw;
+  min-width: 40px; /* Safety minimums */
+  min-height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px;
+  margin-right: 1vw;
 }
 
 .testimony-author {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 2vh;
+}
+
+.testimony-author p {
+  font-size: 1vw; /* Text scales with resolution */
+  font-weight: 600;
+}
+
+/* 6. The Actual Quote Text */
+.testimony-card blockquote {
+  font-size: 1.1vw;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* 7. Responsive Fixes for smaller screens */
+@media (max-width: 1024px) {
+  .testimony-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .testimony-card { border-radius: 18px; padding: 25px; }
+  .author-img { width: 50px; height: 50px; }
+  .testimony-card blockquote, .testimony-author p { font-size: 1rem; }
+  .linkedin-corner-link { font-size: 1.2rem; }
 }

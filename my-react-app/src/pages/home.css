@@ -1,154 +1,119 @@
-/* --- Base Styles (Mobile First / General) --- */
-
+/* 1. Main Wrapper - Locked to the Viewport Height */
 .home-page-container {
+  width: 100%;
+  min-height: 100vh; /* Forces the page to always fill the screen height */
+  padding: 3% 5%;   /* Uses percentage to scale spacing based on size */
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 5%; /* Reduced top padding for mobile */
-  max-width: 1200px;
-  margin: 0 auto;
+  box-sizing: border-box;
+  justify-content: center; /* Centers content vertically on massive screens */
 }
 
+/* 2. Intro Text - Scales with screen */
 .intro-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  margin-bottom: 2%;
 }
 
 .sub-title {
-  font-size: 1.5rem; /* Slightly smaller for mobile */
-  font-weight: 700;
-  margin: 0;
+  font-size: 3.5vw; /* Font size tied directly to screen width */
+  margin-bottom: 1%;
 }
 
 .about-me-text {
-  font-size: 14px;
-  line-height: 1.7;
-  color: #eef4ff;
-  margin: 0;
+  font-size: 1.2vw; /* Text size stays proportional to the layout */
+  line-height: 1.5;
+  width: 95%; 
+  opacity: 0.9;
 }
 
-/* Bottom Section: Defaults to Column for Mobile */
+/* 3. Bottom Section - Fixed 35/65 Ratio */
 .bottom-section {
   display: flex;
-  flex-direction: column; 
-  align-items: center; /* Center items on mobile */
-  gap: 2rem;
+  width: 100%;
+  gap: 4%; /* Gap scales with screen size */
+  align-items: stretch; /* Makes both boxes the same height */
 }
 
+/* 4. Photo Side (35%) */
 .intro-img {
+  flex: 35;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%; /* Full width on mobile */
 }
 
 .intro-img img {
   width: 100%;
-  max-width: 400px; /* Prevents image from becoming huge on tablets */
   height: auto;
-  border-radius: 30px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  border-radius: 2.0vw; /* Corners scale with screen */
   display: block;
 }
 
 .img-caption {
-  font-size: 0.8rem;
-  color: #777;
-  font-style: italic;
+  margin-top: 1vh;
+  font-size: 0.9vw;
+  color: #888;
   text-align: center;
-  margin: 0;
 }
 
+/* 5. Skill Box (65%) - Reverted Design + Hover */
 .skill-box {
-  background: #f5f5f5;
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  width: 100%; /* Ensure it fills container on mobile */
-  box-sizing: border-box;
+  flex: 65; 
+  background-color: #f8f9fa; /* Original light grey */
+  color: #333;
+  padding: 2.5%;
+  border-radius: 1.5vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-box h3 {
-  font-size: 1rem;
+  margin-bottom: 2%;
+  font-size: 1.8vw;
   font-weight: 700;
-  margin: 0 0 0.75rem 0;
-  color: #333;
+  color: #222;
 }
 
+/* 6. Skills Grid */
 .skill-box ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5%;
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
-  gap: 0.6rem;
+  flex-grow: 1; /* Ensures the grid fills the box height */
 }
 
-.skill-box ul li {
-  font-size: 0.85rem;
-  color: #555;
-  padding: 0.6rem; /* Using consistent padding */
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.skill-box li {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-left: 0.4vw solid #4a90e2; /* Scaling blue accent */
+  padding: 1vh 0.5vw;
   text-align: center;
-  font-weight: 500;
-  border-left: 3px solid #4f8ef7;
-  
-  /* Critical for all devices */
-  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), 
-              box-shadow 0.2s ease, 
-              background-color 0.2s ease;
-  cursor: pointer;
-  user-select: none; /* Prevents blue highlight box on mobile tap */
-  -webkit-tap-highlight-color: transparent; /* Removes the grey flash on Android/iOS tap */
+  border-radius: 0.5vw;
+  font-size: 1.1vw;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out; /* Hover transition */
 }
 
-/* Desktop Hover - Only triggers if the device has a mouse */
-@media (hover: hover) {
-  .skill-box ul li:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    background-color: #f8faff;
-    border-left-width: 5px; /* Slight thickening for visual feedback */
-  }
+/* Hover Effect Re-added */
+.skill-box li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: #f0f7ff;
 }
 
-/* Mobile & Desktop Click/Tap - Triggers on the actual press */
-.skill-box ul li:active {
-  transform: scale(0.95) translateY(0); /* "Sinks" into the page when pressed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #eef4ff;
-  transition: transform 0.05s; /* Snappier response for the click */
-}
-
-/* --- Desktop Adjustments (Screens larger than 768px) --- */
-
-@media (min-width: 768px) {
-  .home-page-container {
-    padding: 4rem 5%;
-  }
-
-  .sub-title {
-    font-size: 1.75rem;
-  }
-
-  .bottom-section {
-    flex-direction: row; /* Side-by-side for desktop */
-    align-items: flex-start;
-  }
-
-  .intro-img {
-    width: auto;
-  }
-
-  .intro-img img, .img-caption {
-    max-width: 35vw; /* Return to your original sizing for large screens */
-  }
-
-  .skill-box ul {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  }
+/* Mobile Fix (Tablets and below) */
+@media (max-width: 1024px) {
+  .sub-title { font-size: 2.5rem; }
+  .about-me-text { font-size: 1.1rem; }
+  .bottom-section { flex-direction: column; }
+  .skill-box h3 { font-size: 1.5rem; }
+  .skill-box li { font-size: 1rem; padding: 15px; }
+  .img-caption { font-size: 0.8rem; }
 }

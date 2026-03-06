@@ -1,40 +1,50 @@
-/* Experience.css */
-
-
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #e0e0e0;
-}
-
+/* 1. The Main Container - Full Width scaling */
 .experience-list {
-  max-width: 800px;
+  width: 100%;
+  max-width: 90vw; /* Keeps it wide but prevents it from touching screen edges */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2vh; /* Space between items scales with screen height */
+  padding-bottom: 5vh;
 }
 
-/* The Individual Expandable Box */
+/* 2. Section Title - Proportional Scaling */
+.section-title {
+  text-align: center;
+  font-size: 3vw; /* Scales with screen width like the About Me title */
+  margin-top: 5vh;
+  margin-bottom: 3vh;
+  color: #e0e0e0;
+  border-bottom: 0.2vw solid rgba(255,255,255,0.1);
+  padding-bottom: 1vh;
+  display: block;
+  width: 100%;
+}
+
+.section-block {
+  margin-bottom: 6vh;
+}
+
+/* 3. The Individual Item - Full Width & Fluid */
 .exp-item {
-  background: rgba(255, 255, 255, 0.05); /* Subtle transparent background */
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: 1vw; /* Scaling corners */
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.2);
 }
 
 .exp-item:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px); /* Subtle lift consistent with skill-box hover */
 }
 
-/* The clickable header part */
+/* 4. The Header - Scaling Text and Spacing */
 .exp-header {
-  padding: 20px;
+  padding: 2vw; /* Proportional padding */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -42,27 +52,29 @@
 }
 
 .exp-main-info h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.2rem;
-  color: #61dafb; /* React light blue for titles */
+  margin: 0 0 0.5vh 0;
+  font-size: 1.5vw; /* Title scales with display resolution */
+  color: #61dafb;
 }
 
 .exp-company {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1vw;
   color: #e0e0e0;
 }
 
 .exp-meta {
   text-align: right;
-  font-size: 0.9rem;
+  font-size: 1vw;
   color: #a0a0a0;
-  min-width: 150px;
+  min-width: 12vw;
 }
 
-/* The arrow icon rotation */
+/* 5. The Arrow */
 .arrow-icon {
-  margin-left: 15px;
+  margin-left: 2vw;
+  width: 1.2vw;
+  height: auto;
   transition: transform 0.3s ease;
 }
 
@@ -70,63 +82,58 @@
   transform: rotate(180deg);
 }
 
-/* The expandable content area */
+/* 6. Expandable Content Area */
 .exp-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-  background: rgba(0, 0, 0, 0.2); /* Slightly darker background for content area */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .exp-content.open {
-  /* Set a max-height large enough to fit content, but small enough for smooth transition */
-  max-height: 500px; 
-  padding: 0 20px 20px 20px;
+  /* High enough to fit content, scales with screen */
+  max-height: 80vh; 
+  padding: 0 2vw 2vw 2vw;
 }
 
 .exp-content ul {
   margin: 0;
-  padding-left: 25px;
+  padding-left: 2vw;
 }
 
 .exp-content li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+  margin-bottom: 1vh;
+  line-height: 1.6;
+  font-size: 1.05vw; /* List text scales with screen */
   color: #d0d0d0;
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 600px) {
+/* 7. Responsive Design (Tablets and Mobiles) */
+@media (max-width: 900px) {
+  .section-title { font-size: 2rem; }
+  .exp-main-info h3 { font-size: 1.3rem; }
+  .exp-company { font-size: 1rem; }
+  .exp-meta { 
+    text-align: left; 
+    font-size: 0.85rem;
+    margin-top: 1vh;
+  }
+  .exp-content li { font-size: 0.95rem; }
+  
   .exp-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  .exp-meta {
-    text-align: left;
-    margin-top: 10px;
-    font-size: 0.85rem;
-  }
+  
   .arrow-icon {
-      position: absolute;
-      right: 20px;
-      top: 25px;
+    position: absolute;
+    right: 3vw;
+    top: 3vh;
+    width: 20px;
   }
+  
   .exp-item {
-      position: relative;
+    position: relative;
+    border-radius: 12px;
   }
-}
-.section-block {
-  margin-bottom: 60px; /* Spacing between major sections (e.g. Experience vs Projects) */
-}
-
-/* Update section-title to have less bottom margin since the block handles spacing now */
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: #e0e0e0;
-  border-bottom: 2px solid rgba(255,255,255,0.1); /* Optional: adds a subtle line under headers */
-  padding-bottom: 10px;
-  display: inline-block;
-  width: 100%;
 }

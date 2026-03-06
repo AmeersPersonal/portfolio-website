@@ -1,149 +1,141 @@
-/* Container and Layout */
+/* 1. Main Container - Full Width & Centered */
 .contact-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 24px;
-  font-family: sans-serif;
+  width: 100%;
+  padding: 5vh 5vw; /* Fluid padding based on screen size */
+  box-sizing: border-box;
 }
 
-/* Container for the LinkedIn Button to center it */
+/* 2. Media Section (LinkedIn) */
 .media-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 4vh; /* Spacing scales with height */
   position: relative;
+  width: 100%;
 }
 
-/* Compact LinkedIn Button */
 .linkedin-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;           /* Reduced gap */
-  padding: 6px 16px;  /* Much smaller padding */
+  gap: 0.8vw;
+  padding: 0.8vh 2vw; /* Button size grows with screen */
   background: linear-gradient(135deg, #0077b5 0%, #004a73 100%);
   color: white;
   text-decoration: none;
-  font-family: 'Segoe UI', sans-serif;
   font-weight: 600;
-  font-size: 13px;    /* Smaller font size */
-  border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.2);
+  font-size: 1.1vw; /* Font scales with resolution */
+  border-radius: 5vw;
+  box-shadow: 0 0.5vh 1.5vh rgba(0, 119, 181, 0.2);
   transition: all 0.3s ease;
 }
 
-/* Smaller Icon */
 .linkedin-btn .icon {
-  width: 14px;        /* Shrunk icon size */
-  height: 14px;
+  width: 1.2vw;
+  height: 1.2vw;
 }
 
-/* Adjusted Hover for a smaller button */
 .linkedin-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+  transform: translateY(-0.3vh);
+  box-shadow: 0 0.8vh 2vh rgba(0, 119, 181, 0.4);
 }
 
-/* Subtle Divider between LinkedIn and Form */
+/* "OR" Divider */
 .media-container::after {
+  padding: 2.0;
   content: "OR";
   position: absolute;
-  bottom: -20px;
-  font-size: 10px;
+  bottom: -3.0vh;
+  font-size: 0.8vw;
   color: #9ca3af;
-  letter-spacing: 2px;
+  letter-spacing: 0.3vw;
   font-weight: bold;
 }
 
-/* Form Input Enhancements */
+/* 3. The Contact Card - Now Fluid width */
+.contact-card {
+  width: 100%;
+  /* Takes up a proportional percentage of the screen width */
+  max-width: 35vw; 
+  background-color: #ffffff;
+  border-radius: 1.5vw;
+  box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.15);
+  padding: 3vw;
+}
+
+.contact-title {
+  font-size: 2.2vw;
+  font-weight: bold;
+  margin-bottom: 2.5vh;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* 4. Form Scaling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.form-label {
+  font-size: 0.9vw;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5vh;
+}
+
 .form-input, .form-textarea {
-  border: 1px solid #e5e7eb;
+  width: 100%;
+  padding: 1vh 0.8vw;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5vw;
+  font-size: 1vw;
   background-color: #f9fafb;
   transition: all 0.2s ease;
 }
 
 .form-input:focus, .form-textarea:focus {
   background-color: #ffffff;
-  border-color: #0077b5;
-  box-shadow: 0 0 0 4px rgba(0, 119, 181, 0.1);
-  outline: none;
-}
-.contact-card {
-  width: 100%;
-  max-width: 400px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 32px;
+  outline: 0.2vw solid #2563eb;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.5vw rgba(0, 119, 181, 0.1);
 }
 
-.contact-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #1f2937;
+.form-textarea {
+  min-height: 15vh;
+  resize: vertical;
 }
 
-/* Form Styling */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 4px;
-}
-
-.form-input, .form-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-/* Button Styling */
+/* 5. Submit Button scaling */
 .submit-button {
   width: 100%;
   background-color: #2563eb;
   color: white;
   font-weight: 600;
-  padding: 10px;
+  padding: 1.5vh;
+  font-size: 1.1vw;
   border: none;
-  border-radius: 6px;
+  border-radius: 0.6vw;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .submit-button:hover {
   background-color: #1d4ed8;
-}
-/* 1. Global fix for padding/width math */
-* {
-  box-sizing: border-box; 
+  transform: scale(1.02);
 }
 
-/* 2. Style for active input fields */
-.form-input:focus, 
-.form-textarea:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: -1px;
-  border-color: transparent;
-}
-
-/* 3. Constraint for the message box */
-.form-textarea {
-  resize: vertical; 
-  min-height: 100px;
+/* 6. Tablet/Mobile Logic (Locks sizes to readable pixels) */
+@media (max-width: 1024px) {
+  .contact-card { max-width: 80%; }
+  .contact-title { font-size: 1.8rem; }
+  .linkedin-btn { font-size: 0.9rem; padding: 10px 20px; }
+  .form-label { font-size: 0.85rem; }
+  .form-input, .form-textarea, .submit-button { font-size: 1rem; }
+  .linkedin-btn .icon { width: 16px; height: 16px; }
 }
