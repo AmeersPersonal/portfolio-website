@@ -6,7 +6,7 @@ import {
   certificationsData, 
   awardsData 
 } from './experienceData';
-import './Experience.css';
+import './experience.css';
 import NavBar from '../components/navBar';
 
 // Reusable Section Component
