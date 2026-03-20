@@ -4,6 +4,7 @@
 
 .navbar {
   display: flex;
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -112,6 +113,13 @@
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
   color: white;
+  background: none;
+  border: none;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }
 
 .hamburger-line {
@@ -127,14 +135,10 @@
   display: none; /* Keep it hidden on desktop */
 }
 
-.navbar {
-  display: flex; /* Keep your fluid navbar visible */
-}
-
 /* 2. Mobile View (Screens smaller than 768px) */
 @media (max-width: 768px) {
   .hamburger {
-    display: none; /* Show the hamburger now */
+    display: flex; /* Show the hamburger on mobile */
   }
 
   /* Don't hide the WHOLE .navbar, just hide the .nav-links 

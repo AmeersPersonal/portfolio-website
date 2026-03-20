@@ -37,12 +37,22 @@ function NavBar() {
                     ))}
                 </div>
 
-                <div className="hamburger" onClick={toggleMenu}>
+                <button
+                    className="hamburger"
+                    onClick={toggleMenu}
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
+                    aria-controls="mobile-menu"
+                >
                     {menuOpen ? <X size={28} /> : <Menu size={28} />}
-                </div>
+                </button>
 
                 {/* Mobile Menu */}
-                <div className={`mobile-menu ${menuOpen ? 'active' : ''}`}>
+                <div
+                    id="mobile-menu"
+                    className={`mobile-menu ${menuOpen ? 'active' : ''}`}
+                    aria-label="Mobile navigation"
+                >
                     {navItems.map((item) => (
                         <Link
                             key={item.id}
