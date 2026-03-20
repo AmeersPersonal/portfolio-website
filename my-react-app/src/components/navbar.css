@@ -57,13 +57,17 @@
 
 /* Desktop Navigation Menu */
 .navbar-menu {
-
-  display: flex;
+  display: none; /* Hidden on mobile */
   align-items: center;
   gap: 1.5rem;
   margin-left: auto;
 }
 
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+  }
+}
 
 .nav-item {
   padding: 0.5rem 1rem;
@@ -99,7 +103,7 @@
   transform: translateY(-2px);
 }
 
-.hambuger{
+.hamburger{
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
@@ -107,6 +111,7 @@
   cursor: pointer;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
+  color: white;
 }
 
 .hamburger-line {

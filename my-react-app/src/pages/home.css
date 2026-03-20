@@ -111,9 +111,47 @@
 /* Mobile Fix (Tablets and below) */
 @media (max-width: 1024px) {
   .sub-title { font-size: 2.5rem; }
-  .about-me-text { font-size: 1.1rem; }
+  .about-me-text { font-size: 1.1rem; width: 100%; }
   .bottom-section { flex-direction: column; }
   .skill-box h3 { font-size: 1.5rem; }
   .skill-box li { font-size: 1rem; padding: 15px; }
+  .img-caption { font-size: 0.8rem; }
+}
+
+/* Mobile Fix (Phones) */
+@media (max-width: 768px) {
+  .home-page-container {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .sub-title { font-size: 2rem; }
+  .about-me-text { font-size: 1rem; width: 100%; }
+
+  .bottom-section {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .skill-box {
+    border-radius: 12px;
+  }
+
+  .skill-box h3 { font-size: 1.3rem; }
+
+  .skill-box ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .skill-box li {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+    border-left-width: 4px;
+    border-radius: 6px;
+  }
+
   .img-caption { font-size: 0.8rem; }
 }

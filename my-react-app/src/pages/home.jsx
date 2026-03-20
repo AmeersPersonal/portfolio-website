@@ -22,7 +22,7 @@ function HomePage() {
           </div>
 
           <div className="skill-box">
-            <h3>Skills I Have Obtained </h3>
+            <h3>Skills I Have Obtained</h3>
             <ul>
               <li>HTML & CSS</li>
               <li>JavaScript</li>

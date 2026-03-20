@@ -86,5 +86,22 @@
   .testimony-card { border-radius: 18px; padding: 25px; }
   .author-img { width: 50px; height: 50px; }
   .testimony-card blockquote, .testimony-author p { font-size: 1rem; }
-  .linkedin-corner-link { font-size: 1.2rem; }
+  .linkedin-corner-link { font-size: 1.2rem; top: 16px; right: 16px; }
+}
+
+@media (max-width: 768px) {
+  .testimony-section {
+    padding: 1.5rem 1rem;
+  }
+  .testimony-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .testimony-card {
+    border-radius: 14px;
+    padding: 20px;
+    max-width: 100%;
+  }
+  .linkedin-corner-link { font-size: 1.2rem; top: 14px; right: 14px; }
+  .author-img { width: 44px; height: 44px; }
 }
