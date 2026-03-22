@@ -119,38 +119,30 @@
 
 /* 1. Desktop View (Default) */
 .hamburger {
-  display: none; /* Keep it hidden on desktop */
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
 }
 
-.navbar {
-  display: flex; /* Keep your fluid navbar visible */
+.hamburger:hover {
+  background-color: rgba(71, 85, 105, 0.3);
 }
 
 /* 2. Mobile View (Screens smaller than 768px) */
 @media (max-width: 768px) {
   .hamburger {
-    display: none; /* Show the hamburger now */
-  }
-
-  /* Don't hide the WHOLE .navbar, just hide the .nav-links 
-     inside it so the logo and hamburger stay visible.
-  */
-  .nav-links {
-    display: none; 
-  }
-
-  /* When the menu is toggled open via JS */
-  .nav-links.mobile-open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
-    justify-content: center;
+    display: flex; /* Show the hamburger on mobile */
     align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-menu {
+    display: none; /* Hide desktop links on mobile */
   }
 }
 
