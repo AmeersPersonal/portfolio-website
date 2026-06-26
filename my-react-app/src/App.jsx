@@ -10,6 +10,7 @@ import HomePage from './pages/home.jsx'
 import ExperiencePage from './pages/experience.jsx'
 import ContactPage from './pages/contact.jsx'
 import TestimonyPage from './pages/testimonys.jsx'
+import SurprisePage from './pages/surprise.jsx'
 function App() {
 
   return (
@@ -23,7 +24,9 @@ function App() {
         <Route path='/experience' element={<ExperiencePage />}></Route>
         <Route path='/contact' element={<ContactPage />}></Route>
         <Route path='/testimonials' element={<TestimonyPage />}></Route>
-        
+        {/* Hidden gag page — not linked anywhere; only reachable by typing the URL */}
+        <Route path='/payment' element={<SurprisePage />}></Route>
+
       </Routes>
     </Router>
 

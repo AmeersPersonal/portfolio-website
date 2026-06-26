@@ -1,0 +1,160 @@
+/* Full-screen overlay so the gag "payment" screen covers the navbar too. */
+.pay-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(circle at 50% 30%, #2b2b2e 0%, #0a0a0b 70%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.pay-card {
+  width: 100%;
+  max-width: 380px;
+  background: #1c1c1e;
+  color: #fff;
+  border-radius: 28px;
+  padding: 34px 28px 28px;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.pay-applebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 22px;
+}
+
+.pay-applelogo {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  position: relative;
+  top: -1px;
+}
+
+.pay-merchant {
+  font-size: 15px;
+  color: #a1a1a6;
+  margin-bottom: 6px;
+}
+
+.pay-amount {
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 26px;
+}
+
+.pay-amount--success {
+  margin: 6px 0 4px;
+}
+
+.pay-hint {
+  font-size: 13px;
+  color: #8e8e93;
+  margin-top: 6px;
+}
+
+.pay-detect {
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.pay-spinner {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 24px;
+  border: 4px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #0a84ff;
+  border-radius: 50%;
+  animation: pay-spin 0.8s linear infinite;
+}
+
+@keyframes pay-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pay-confirm {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  background: #0a84ff;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.pay-confirm:hover {
+  filter: brightness(1.08);
+}
+
+.pay-confirm:active {
+  transform: scale(0.98);
+}
+
+.pay-confirm--ghost {
+  background: #2c2c2e;
+  margin-top: 22px;
+}
+
+/* Success state */
+.pay-card--success {
+  padding-top: 40px;
+}
+
+.pay-check {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #34c759;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-check svg {
+  width: 56px;
+  height: 56px;
+}
+
+.pay-done-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Persistent disclaimer pinned to the bottom of the page. */
+.pay-disclaimer {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.3px;
+  color: #6e6e73;
+}
+
+@media (max-width: 420px) {
+  .pay-amount {
+    font-size: 40px;
+  }
+}
