@@ -1,37 +1,21 @@
-import { useState } from 'react'
-
 import './App.css'
-import NavBar from './components/navBar'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
-
-import "./pages/home.jsx"
 import HomePage from './pages/home.jsx'
-import ExperiencePage from './pages/experience.jsx'
-import ContactPage from './pages/contact.jsx'
-import TestimonyPage from './pages/testimonys.jsx'
 import SurprisePage from './pages/surprise.jsx'
+
 function App() {
-
   return (
-    <>
-
     <Router>
-      <NavBar />
       <Routes>
-        <Route path="" element={<HomePage />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/home" element={<HomePage />}></Route>
-        <Route path='/experience' element={<ExperiencePage />}></Route>
-        <Route path='/contact' element={<ContactPage />}></Route>
-        <Route path='/testimonials' element={<TestimonyPage />}></Route>
         {/* Hidden gag page — not linked anywhere; only reachable by typing the URL */}
         <Route path='/payment' element={<SurprisePage />}></Route>
-
+        {/* Fallback so an unmatched hash (e.g. a stray #about from an in-page anchor) doesn't render a blank page */}
+        <Route path="*" element={<HomePage />}></Route>
       </Routes>
     </Router>
-
-      
-    </>
   )
 }
 

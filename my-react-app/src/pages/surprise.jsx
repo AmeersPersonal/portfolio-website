@@ -7,7 +7,7 @@ import "./surprise.css";
 // It mimics an Apple Pay style charge as a joke. The persistent
 // "No real transaction" line keeps it clearly a gag.
 
-const AMOUNT = "10,000.00";
+const AMOUNT = "250.00";
 const MERCHANT = "Ameer Tayeh";
 
 // Apple logo as inline SVG so it renders on every device (the Unicode

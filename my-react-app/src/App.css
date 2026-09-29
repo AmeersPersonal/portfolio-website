@@ -1,49 +1,8 @@
 /* ===========================
    GLOBAL STYLES
+   (base reset/typography lives in index.css; this file is
+   utility classes shared across pages)
    =========================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-  color: #e2e8f0;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
-/* Main Content */
-.main-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.hero-section {
-  text-align: center;
-  padding: 5rem 0;
-}
-
-.hero-section h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-}
 
 .gradient-text {
   background: linear-gradient(90deg, #60a5fa 0%, #06b6d4 100%);
